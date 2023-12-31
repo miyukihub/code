@@ -56,9 +56,9 @@ jobs:
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           git remote -v
-          git push -u origin feature/${{ github.run_number }}
-          # プルリクエスト処理
-          echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
-          gh auth login --with-token < token.txt
-          git remote add origin https://${{ secrets.GIT_NAME }}:{password}@github.com/${{ secrets.GIT_NAME }}/project.git
-          gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!"
+          #git push -u origin feature/${{ github.run_number }}
+          ## プルリクエスト処理
+          #echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
+          #gh auth login --with-token < token.txt
+          #git remote add origin https://${{ secrets.GIT_NAME }}:{password}@github.com/${{ secrets.GIT_NAME }}/project.git
+          #gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!"
