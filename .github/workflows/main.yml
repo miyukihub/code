@@ -32,7 +32,7 @@ jobs:
       - name: Push image to Docker Hub
         run: |
           # Docker Hub ログイン
-          docker login docker.io --docker_name ${{ secrets.DOCKER_NAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+          docker login docker.io --username ${{ secrets.DOCKER_NAME }} --password ${{ secrets.DOCKER_PASSWORD }}
           # イメージプッシュ
           docker image push ${{ secrets.DOCKER_NAME }}/gitops-go-app:${{ github.run_number }}
 
