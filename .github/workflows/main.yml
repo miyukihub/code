@@ -56,9 +56,10 @@ jobs:
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           git remote -v
-          git branch -M main
-          git remote rm origin
-          git remote add origin https://${{secrets.GIT_NAME}}:${{secrets.GH_PASSWORD}}@github.com/${{secrets.GIT_NAME}}/project.git
+          git branch
+          #git branch -M main
+          #git remote rm origin
+          #git remote add origin https://${{secrets.GIT_NAME}}:${{secrets.GH_PASSWORD}}@github.com/${{secrets.GIT_NAME}}/project.git
           git push -u origin "feature/${{ github.run_number }}"
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
