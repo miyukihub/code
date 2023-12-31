@@ -55,7 +55,7 @@ jobs:
           # プッシュ処理
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
-          git 
+          git remote -v
           git push origin feature/${{ github.run_number }}
           # プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
