@@ -52,14 +52,13 @@ jobs:
           git checkout feature/${{ github.run_number }}
           # values.yamlのタグ番号を更新
           sed -i 's/tag: [0-9]*/tag: ${{ github.run_number }}/g' values.yaml
-          cat values.yaml
           # プッシュ処理
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           git 
           git push origin feature/${{ github.run_number }}
           # プルリクエスト処理
-          echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} > token.txt
+          echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           gh auth login --with-token < token.txt
           #git remote add origin https://${{ secrets.GIT_NAME }}:{password}@github.com/${{ secrets.GIT_NAME }}/project.git
           #gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!"
