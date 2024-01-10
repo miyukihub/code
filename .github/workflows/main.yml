@@ -58,7 +58,7 @@ jobs:
           git remote -v
           git branch
           echo "git push -u origin feature/${{ github.run_number }}"
-          git push #-u origin "feature/${{ github.run_number }}"
+          git push -u origin "feature/${{ github.run_number }}"
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           gh auth login --with-token < token.txt
