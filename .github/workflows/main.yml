@@ -62,5 +62,4 @@ jobs:
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           gh auth login --with-token < token.txt
-          #git remote add origin https://${{ secrets.GIT_NAME }}:${{secrets.GH_PASSWORD}}@github.com/${{ secrets.GIT_NAME }}/project.git
           gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!"
