@@ -31,8 +31,8 @@ jobs:
           # プッシュ処理
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
-          #git remote rm https://github.com/miyukihub/config.git
-          git remote add origin https://github.com/miyukihub/config.git
+          git remote rm https://github.com/miyukihub/config.git
+          git remote add origin https://miyukihub:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github/config.git
           git remote -v
           git branch
           echo "git push  origin feature/${{ github.run_number }}"
