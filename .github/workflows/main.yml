@@ -62,4 +62,4 @@ jobs:
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           gh auth login --with-token < token.txt
-          gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!"
+          gh pr create  --title "Update Tag ${{ github.run_number }}" --body "Please Merge !!" 
