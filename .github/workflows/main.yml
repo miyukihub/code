@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-          repository: miyukihub
+        with:
+          repository: miyukihub/config
 
         # values.yamlの更新、新規ブランチ作成、プッシュ、プルリクエスト
       - name: Update values.yaml & Pull Request to Config Repository
