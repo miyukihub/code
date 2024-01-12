@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+          repository: miyukihub
 
         # values.yamlの更新、新規ブランチ作成、プッシュ、プルリクエスト
       - name: Update values.yaml & Pull Request to Config Repository
@@ -31,10 +32,10 @@ jobs:
           # プッシュ処理1
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
-          git remote rm https://github.com/miyukihub/config.git
-          git remote add origin https://miyukihub:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github/config.git
-          git remote -v
-          git branch
+          #git remote rm https://github.com/miyukihub/config.git
+          #git remote add origin https://miyukihub:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github/config.git
+          #git remote -v
+          #git branch
           echo "git push  origin feature/${{ github.run_number }}"
           git push origin feature/${{ github.run_number }}
           ## プルリクエスト処理
