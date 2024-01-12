@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          repository: miyukihub/config
 
         # values.yamlの更新、新規ブランチ作成、プッシュ、プルリクエスト
       - name: Update values.yaml & Pull Request to Config Repository
@@ -33,12 +31,10 @@ jobs:
           # プッシュ処理1
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
-          #git remote rm https://github.com/miyukihub/config.git
-          #git remote add origin https://miyukihub:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github/config.git
           #git remote -v
           #git branch
-          echo "git push  origin feature/${{ github.run_number }}"
-          #git push origin feature/${{ github.run_number }}
+          #echo "git push  origin feature/${{ github.run_number }}"
+          git push origin feature/${{ github.run_number }}
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           gh auth login --with-token < token.txt
