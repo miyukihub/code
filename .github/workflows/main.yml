@@ -35,7 +35,7 @@ jobs:
           git remote -v
           git remote set-url origin https://github-actions:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/miyukihub/config.git
           #git branch
-          #git push origin feature/${{ github.run_number }}
+          git push origin feature/${{ github.run_number }}
           ## プルリクエスト処理
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > token.txt
           #gh auth login --with-token < token.txt
