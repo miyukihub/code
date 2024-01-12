@@ -32,7 +32,7 @@ jobs:
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           #git remote -v
-          git remote set-url origin https://miyukihub@github.com/config.git
+          git remote set-url origin https://github.com/miyukihub/config.git
           #git branch
           #echo "git push  origin feature/${{ github.run_number }}"
           git push origin feature/${{ github.run_number }}
