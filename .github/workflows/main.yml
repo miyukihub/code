@@ -33,7 +33,7 @@ jobs:
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           git remote -v
-          git remote set-url origin https://github-actions:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/miyukihub/config.git
+          #git remote set-url origin https://github-actions:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/miyukihub/config.git
           #git branch
           git push origin feature/${{ github.run_number }}
           ## プルリクエスト処理
