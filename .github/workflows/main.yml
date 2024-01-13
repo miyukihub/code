@@ -19,7 +19,7 @@ jobs:
           #echo -e "machine github.com\nlogin ${{ secrets.GIT_NAME }}\npasswd ${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.netrc
           # 「config」リポジトリからクローン
           #git clone https://github.com/${{ secrets.GIT_NAME }}/config.git
-          git remote set-url origin https://${{ secrets.GIT_NAME }}:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/config.git
+          #git remote set-url origin https://${{ secrets.GIT_NAME }}:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/config.git
           git clone https://${{ secrets.GIT_NAME }}:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/config.git
           # values.yamlファイルの更新処理
           cd config/gitops-helm
@@ -34,7 +34,7 @@ jobs:
           git add values.yaml
           git commit -m "Update tag ${{ github.run_number }}"
           git remote -v
-          #git remote set-url origin https://github-actions:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/miyukihub/config.git
+          #git remote set-url origin https://github-actions:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/config.git
           #git branch
           git push origin feature/${{ github.run_number }}
           ## プルリクエスト処理
